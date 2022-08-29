@@ -1,5 +1,7 @@
 import org.w3c.dom.ls.LSOutput;
 
+import java.time.LocalDate;
+
 public class Main {
 
 
@@ -10,7 +12,7 @@ public class Main {
         System.out.println("Hello world!");
         /*1)*/
         printIsLeapYear(2020);
-        printIsMessenger(1, 2008);
+        printIsMessenger(0, 2010);
         cardDeliveryDays(100);
 
     }
@@ -37,15 +39,14 @@ public class Main {
 
 
     private static void printIsMessenger(int clientOS, int clientDeviceYear) {
-        if (clientDeviceYear <= 2015 && clientOS == 1) {
-            System.out.println(" установите облегченную версию приложения для Андройд по ссылке");
-        } else if (clientDeviceYear <= 2015 && clientOS == 0) {
-            System.out.println(" установите облегченную версию для IOS по ссылке ");
-        } else if (clientDeviceYear > 2015 && clientOS == 1) {
-            System.out.println(" установите обычную версию приложения для Андроид");
-        } else if (clientDeviceYear > 2015 && clientOS == 0) {
-            System.out.println(" установите обычную версию приложения для IOS ");
+        if (!(clientOS==0|| clientOS==1)){
+            throw new RuntimeException(" Устройство не поддерживает версию OS");
         }
+
+        String versionMessage= clientDeviceYear< 2015 ? " облегченную": " полную";
+        String osMessage = clientOS == 0 ?" IOS" : " Android";
+        System.out.println(" Установите "+ versionMessage + " версию приложения для " + osMessage);
+
     }
 
 
