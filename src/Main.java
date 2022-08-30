@@ -13,7 +13,9 @@ public class Main {
         /*1)*/
         printIsLeapYear(2020);
         printIsMessenger(0, 2010);
-        cardDeliveryDays(100);
+        System.out.println(" Потребуется дней доставки " + cardDeliveryDays(100));
+
+
 
     }
 
@@ -51,19 +53,17 @@ public class Main {
 
 
     // Задание 3
-    private static void cardDeliveryDays(int deliveryDistance) {
+    private static int cardDeliveryDays(int deliveryDistance) {
         int start = 20;
         int step = 40;
-        int result;
-        if (deliveryDistance<start){
-            result=1;
-        }else {
-            result=(Math.abs((deliveryDistance-start)/step)+2);
+        int result = 1;
+        if (deliveryDistance>=start){
+            result = (Math.abs((deliveryDistance-start)/step)+2);
         }
-        System.out.println(" Потребуется дней для доставки: " + result);
-
+        return result;
 
     }
+
 }
 
 
