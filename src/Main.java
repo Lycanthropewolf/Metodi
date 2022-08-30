@@ -13,7 +13,7 @@ public class Main {
         /*1)*/
         printIsLeapYear(2020);
         printIsMessenger(0, 2010);
-        System.out.println(" Потребуется дней доставки " + cardDeliveryDays(100));
+        System.out.println(" Потребуется дней доставки " + cardDeliveryDays(0));
 
 
 
@@ -58,7 +58,7 @@ public class Main {
         int step = 40;
         int result = 1;
         if (deliveryDistance>=start){
-            result = (Math.abs((deliveryDistance-start)/step)+2);
+            result = (((deliveryDistance-start)/step)+2);
         }
         return result;
 
